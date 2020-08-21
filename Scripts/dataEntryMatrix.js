@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////
-"///////THIS IS MY TEMPLATE FOR CREATING 'QUICK' D3 CLASSES////////"
+"///////THE CLASS DEFINED BY THIS SCRIPT IS USED TO GENERATE THE 21CD MATRIX WHICH IS USED TO ENTER DATA////////"
 //////////////////////////////////////////////////////////////////////////////////////
 
 class DataEntryMatrix{
@@ -24,6 +24,11 @@ class DataEntryMatrix{
             }
         }
         this.categoriesData = categoriesData
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        "///////THE BUILD CHART DATA FUNCTION IS USED TO UPDATE THE CLASS WHEN THE DATA SOURCE CHANGES////////"
+        //////////////////////////////////////////////////////////////////////////////////////
+
         this.data = this.buildChartData(_data);
         console.log(this.data)
 
@@ -40,9 +45,18 @@ class DataEntryMatrix{
         "///////CREATING AN SVG OBJECT TO DRAW TO////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
+        // THIS CHART USES DIVS INSTEAD OF SVG ELEMENTS
+
         //////////////////////////////////////////////////////////////////////////////////////
         "///////ADD GROUPS TO THE SVG FOR ORGANIZING DATA////////"
         //////////////////////////////////////////////////////////////////////////////////////
+
+        // THIS CHART USES DIVS INSTEAD OF SVG ELEMENTS
+
+        //////////////////////////////////////////////////////////////////////////////////////
+        "///////AFTER CONSTRUCTING THIS CLASS, THE DRAW UPDATE FUNCTION SHOULD BE CALLED////////"
+        //////////////////////////////////////////////////////////////////////////////////////
+
         return
     };
 
@@ -87,14 +101,22 @@ class DataEntryMatrix{
     };
 
     updateData(_data,_levelName){
+        //////////////////////////////////////////////////////////////////////////////////////
+        "///////CALL THIS FUNCTION WITH NEW DATA TO UPDATE THE DATA IN THE CHART////////"
+        //////////////////////////////////////////////////////////////////////////////////////
         var updatedData = this.buildChartData(_data)
         this.drawUpdate()
     };
 
     drawUpdate(){
         //////////////////////////////////////////////////////////////////////////////////////
-        "///////THIS FUNCTION DOES THE HEAVY LIFTING FOR CREATING GRAPHICS////////"
+        "///////THIS FUNCTION DOES THE HEAVY LIFTING FOR CREATING AND UPDATING GRAPHICS////////"
+        "///////IT IS DESIGNED TO BE RUN WITHOUT RECREATING ELEMENTS, OPTING INSTEAD TO UPDATE THOSE THAT EXIST////////"
+        "///////TO ACHIEVE THIS INTERACTION THE COMPLETE D3 GENERAL UPDATE PATTERN IS USED IN ANY ELEMENT CREATION////////"
+        "///////USING THE FULL PATTERN GARAUNTEES STABILITY WHEN THE FUNCTION RUNS MULTIPLE TIMES////////"
         //////////////////////////////////////////////////////////////////////////////////////
+
+        '///////LOCALIZING CLASS VARIABLES AND DOING SOME LIGHT DATA SHAPING////////'
         var _thisClass = this
         var _data = this.data
         var _categoriesData = this.categoriesData
@@ -113,7 +135,7 @@ class DataEntryMatrix{
 
 
         ////////D3 COMPLETE GENERAL UPDATE PATTERN///////// 
-        '///////CONTAINERS TO SEPARATE HEADERS////////'
+        '///////CONTAINERS TO SEPARATE HEADERS FROM MATRIX////////'
         var matrixStructure = ['matrixHeader','matrixBody']
         var updateMatrixStructure = _div.selectAll('div').data(matrixStructure)
         var enterMatrixStructure = updateMatrixStructure.enter().append('div')
@@ -165,7 +187,6 @@ class DataEntryMatrix{
         var enterMatrixContainers = updateMatrixContainers.enter().append('div').attr('class', 'matrixContainer')
         var exitMatrixContainers = updateMatrixContainers.exit()
         var mergeMatrixContainers = enterMatrixContainers.merge(updateMatrixContainers)
-        // console.log(mergeMatrixContainers)
         ///////////////////////////////////////////////////
 
         ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
@@ -198,7 +219,7 @@ class DataEntryMatrix{
         ///////////////////////////////////////////////////
         
         ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
-        '///////ROW CONTAINERS FOR DATA CONTAINERS////////'
+        '///////ROW CONTAINERS FOR TABLE CELLS////////'
         var updateMatrixRow = mergeMatrixDataContainers.selectAll('.matrixRow').data(function(d){
             return d['rowData']
         })
@@ -211,7 +232,7 @@ class DataEntryMatrix{
         ///////////////////////////////////////////////////
 
         ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
-        '///////DATA FOR ROW CONTAINERS////////'
+        '///////DATA FOR CELLS IN ROW CONTAINERS////////'
         var updateMatrixData = mergeMatrixRow.selectAll('.matrixData').data(function(d){
             return d['data']
         })
@@ -235,9 +256,13 @@ class DataEntryMatrix{
             .style('padding-bottom',matrixCellPadding + 'px')
         ///////////////////////////////////////////////////
         
-        ////////SELECTING AND ADDING EVENTS/////////
+        ////////////SELECTING AND ADDING EVENTS////////////
         '///////TRANSITIONS AND INTERACTIONS WITH MATRIX////////'
-
+        ///////////////////////////////////////////////////
+        
+        //////////////////
+        '///////HIGHLIGHTING MATRIX CELLS ON HOVER////////'
+        //////////////////
         d3.selectAll('.matrixData').on('mouseover',function(d){
             d3.select(this).transition().duration(180)
                 .style('background','#fbec40')
@@ -247,7 +272,9 @@ class DataEntryMatrix{
                 .style('background','white')
         })
 
-
+        //////////////////
+        '///////HIGHLIGHTING ROWS WHEN HOVERING OVER HEADERS////////'
+        //////////////////
         d3.selectAll('.rowHeader').on('mouseover',function(d){
             d3.select(this.parentNode).selectAll('.matrixData').transition().duration(180)
                 .style('background',function(d){
@@ -274,12 +301,18 @@ class DataEntryMatrix{
                 })
                 .style('cursor','default')
         })
+
+        //////////////////
+        '///////OPENING LINKS TO 21CD WEBSITE WHEN CLICKING ON ROW HEADERS////////'
+        //////////////////
         d3.selectAll('.rowHeader').on('click',function(d){
             var linkAddress = d['link']
             window.open(linkAddress)
         })
 
-
+        //////////////////
+        '///////HIGHLIGHTING CATEGORY NAMES WHEN HOVERING OVER CATEGORY HEADER////////'
+        //////////////////
         d3.selectAll('.categoryHeader').on('mouseover',function(d){
             d3.select(this).transition().duration(350)
                 .style('background','#111111')
@@ -290,6 +323,10 @@ class DataEntryMatrix{
                 .style('background','#666666')
                 .style('cursor','default')
         })
+        
+        //////////////////
+        '///////CATEGORY ROLLUP ON CLICKING ON CATEGORY HEADER////////'
+        //////////////////
         d3.selectAll('.categoryHeader').on('click',function(d){
             d3.select(this.parentNode).select('.matrixDataContainers').transition().duration(400)
                 .style('display',function(d){

@@ -10,9 +10,6 @@ div{
     font-weight: 300;
     font-size: small;
     text-align: center;
-
-    /* font-weight: 700;
-    font-size: large; */
 }
 
 .matrixHeader{
@@ -44,7 +41,7 @@ div{
 }
 
 .matrixDataContainers{
-    /* display: none; */
+
 }
 
 .matrixRow{

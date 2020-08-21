@@ -604,33 +604,34 @@ var dataIn = {
         }
     ],
     "developments":{
-        "This Project":{
-            "name":"This Project",
-            "description":"",
-            "location":"",
-            "scores":{
-                "Limits to Growth":{"score":"Standard","value":0,"category":"Place"},
-                "Food":{"score":"Standard","value":0,"category":"Place"},
-                "Habitat":{"score":"Standard","value":0,"category":"Place"},
-                "Transportation":{"score":"Standard","value":0,"category":"Place"},
-                "Water":{"score":"Standard","value":0,"category":"Water"},
-                "Energy":{"score":"Standard","value":0,"category":"Energy"},
-                "Civilized Environment":{"score":"Standard","value":0,"category":"Health + Happiness"},
-                "Neighborhood Design":{"score":"Standard","value":0,"category":"Health + Happiness"},
-                "Biophilia":{"score":"Standard","value":0,"category":"Health + Happiness"},
-                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
-                "Material Plan":{"score":"Standard","value":0,"category":"Materials"},
-                "Embodied Energy & Carbon":{"score":"Standard","value":0,"category":"Materials"},
-                "Waste":{"score":"Standard","value":0,"category":"Materials"},
-                "Neighborhood & Access":{"score":"Standard","value":0,"category":"Equity"},
-                "Access to Nature":{"score":"Standard","value":0,"category":"Equity"},
-                "Access to Community Services":{"score":"Standard","value":0,"category":"Equity"},
-                "Investment":{"score":"Standard","value":0,"category":"Equity"},
-                "Just Organizations":{"score":"Standard","value":0,"category":"Equity"},
-                "Beauty & Spirit":{"score":"Standard","value":0,"category":"Beauty"},
-                "Inspiration":{"score":"Standard","value":0,"category":"Beauty"}
-            }
-        },"Abundance":{
+        // "This Project":{
+        //     "name":"This Project",
+        //     "description":"",
+        //     "location":"",
+        //     "scores":{
+        //         "Limits to Growth":{"score":"Standard","value":0,"category":"Place"},
+        //         "Food":{"score":"Standard","value":0,"category":"Place"},
+        //         "Habitat":{"score":"Standard","value":0,"category":"Place"},
+        //         "Transportation":{"score":"Standard","value":0,"category":"Place"},
+        //         "Water":{"score":"Standard","value":0,"category":"Water"},
+        //         "Energy":{"score":"Standard","value":0,"category":"Energy"},
+        //         "Civilized Environment":{"score":"Standard","value":0,"category":"Health + Happiness"},
+        //         "Neighborhood Design":{"score":"Standard","value":0,"category":"Health + Happiness"},
+        //         "Biophilia":{"score":"Standard","value":0,"category":"Health + Happiness"},
+        //         "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+        //         "Material Plan":{"score":"Standard","value":0,"category":"Materials"},
+        //         "Embodied Energy & Carbon":{"score":"Standard","value":0,"category":"Materials"},
+        //         "Waste":{"score":"Standard","value":0,"category":"Materials"},
+        //         "Neighborhood & Access":{"score":"Standard","value":0,"category":"Equity"},
+        //         "Access to Nature":{"score":"Standard","value":0,"category":"Equity"},
+        //         "Access to Community Services":{"score":"Standard","value":0,"category":"Equity"},
+        //         "Investment":{"score":"Standard","value":0,"category":"Equity"},
+        //         "Just Organizations":{"score":"Standard","value":0,"category":"Equity"},
+        //         "Beauty & Spirit":{"score":"Standard","value":0,"category":"Beauty"},
+        //         "Inspiration":{"score":"Standard","value":0,"category":"Beauty"}
+        //     }
+        // },
+        "Abundance":{
             "name":"Abundance EcoVillage",
             "description":"",
             "location":"United States",
@@ -654,7 +655,8 @@ var dataIn = {
                 "Investment":{"score":"Standard","value":0,"category":"Equity"},
                 "Inspiration":{"score":"Better","value":2,"category":"Beauty"}
             }
-        },"Almerre":{
+        },
+        "Almerre":{
             "name":"Almere New City",
             "description":"",
             "location":"International",
