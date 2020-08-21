@@ -1,12 +1,12 @@
-//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 "///////THIS IS MY TEMPLATE FOR CREATING 'QUICK' D3 CLASSES////////"
-//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 
 class DataEntryMatrix{
     constructor(_data,_div,_width,_height){
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////ADDING THE INITIAL PARAMETERS BASED ON USER INPUT////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         this.width = _width;
         this.height = _height;
         this.centerX = _width/2;
@@ -15,9 +15,9 @@ class DataEntryMatrix{
         
         
 
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////ANY ONE TIME DATA SHAPING SHOULD HAPPEN HERE////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
 
         var categoriesData = []
         for (var d of _data){
@@ -29,27 +29,27 @@ class DataEntryMatrix{
         this.data = this.buildChartData(_data);
         console.log(this.data)
 
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////BACK END CONTROLS FOR EDITING THE GRAPHIC////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
 
         this.mainHeaderHeight = 60
         this.categoryHeaderHeight = 40
 
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////CREATING AN SVG OBJECT TO DRAW TO////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
 
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////ADD GROUPS TO THE SVG FOR ORGANIZING DATA////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         return
     };
 
     buildChartData(_data){
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////ANY GRAPHIC SPECIFIC DATA SHAPING SHOULD HAPPEN HERE////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         console.log(_data)
         for (var d of _data){
             d['data'].unshift({'score':'Tag','value':-1,'text':d['tag']})
@@ -73,9 +73,9 @@ class DataEntryMatrix{
 
 
     resize(_width,_height){
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////CALL THIS FUNCTION TO RESIZE THE GRAPHIC////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         this.width = _width;
         this.height = _height;
         this.centerX = _width/2;
@@ -92,9 +92,9 @@ class DataEntryMatrix{
     };
 
     drawUpdate(){
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         "///////THIS FUNCTION DOES THE HEAVY LIFTING FOR CREATING GRAPHICS////////"
-        //////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////
         var _thisClass = this
         var _data = this.data
         var _categoriesData = this.categoriesData
@@ -109,6 +109,8 @@ class DataEntryMatrix{
         var categoryHeaderHeight = this.categoryHeaderHeight
         var cellWidth = _width/6
 
+
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN///////// 
         var matrixStructure = ['matrixHeader','matrixBody']
         var updateMatrixStructure = _div.selectAll('div').data(matrixStructure)
         var enterMatrixStructure = updateMatrixStructure.enter().append('div')
@@ -120,11 +122,12 @@ class DataEntryMatrix{
                     return mainHeaderHeight + 'px'
                 }
             })
+        ///////////////////////////////////////////////////
 
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
         var headerData = _data[0]['rowData'][0]['data']
         var updateMatrixHeader = d3.selectAll('.matrixHeader').selectAll('div').data(headerData)
         var enterMatrixHeader = updateMatrixHeader.enter().append('div')
-
         var exitMatrixHeader = updateMatrixHeader.exit()
         var mergeMatrixHeader = enterMatrixHeader.merge(updateMatrixHeader)
             .attr('class',function(d){
@@ -142,94 +145,70 @@ class DataEntryMatrix{
             })
             .style('display','inline-block')
             .style('width',cellWidth + 'px')
-            
+        ///////////////////////////////////////////////////
 
-        var updateMatrixContainers = d3.selectAll('.matrixBody').selectAll('div').data(_data)
-        var enterMatrixContainers = updateMatrixContainers.enter().append('div')
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
+        var updateMatrixContainers = d3.selectAll('.matrixBody').selectAll('.matrixContainer').data(_data)
+        var enterMatrixContainers = updateMatrixContainers.enter().append('div').attr('class', 'matrixContainer')
         var exitMatrixContainers = updateMatrixContainers.exit()
         var mergeMatrixContainers = enterMatrixContainers.merge(updateMatrixContainers)
-            .attr('class', 'matrixContainer')
+        // console.log(mergeMatrixContainers)
+        ///////////////////////////////////////////////////
 
-        var matrixCategoryHeaders = mergeMatrixContainers.append('div')
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
+        var updateMatrixCategoryHeaders = mergeMatrixContainers.selectAll('.categoryHeader').data(function(d){
+            // console.log(d)
+            return [d]
+        })
+        var enterMatrixCategoryHeaders = updateMatrixCategoryHeaders.enter().append('div').attr('class','categoryHeader')
+        var exitMatrixCategoryHeaders = updateMatrixCategoryHeaders.exit()
+        var mergeMatrixCategoryHeaders = enterMatrixCategoryHeaders.merge(updateMatrixCategoryHeaders)
             .attr('id',function(d){
-                return d['category'] + 'Category'
+                return removeSpaces(d['category']) + 'Category'
             })
-            .attr('class','categoryHeader')
-            .text(function(d){return d['category']})
-        
-        var matrixCategoryData = mergeMatrixContainers.append('div')
-            .attr('id',function(d){
-                return d['category'] + 'MatrixData'
+            .text(function(d){
+                return d['category']
             })
-            .attr('class','matrixData')
-        
+        ///////////////////////////////////////////////////
 
-        var updateMatrixData = matrixCategoryData.selectAll('div')
-            .data(function(d){ return d['rowData'] })
-        var enterMatrixData = updateMatrixData.enter().append('div')
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
+        var updateMatrixDataContainers = mergeMatrixContainers.selectAll('.matrixDataContainers').data(function(d){
+            return [d]
+        })
+        var enterMatrixDataContainers = updateMatrixDataContainers.enter().append('div').attr('class','matrixDataContainers')
+        var exitMatrixDataContainers = updateMatrixDataContainers.exit()
+        var mergeMatrixDataContainers = enterMatrixDataContainers.merge(updateMatrixDataContainers)
+            .attr('id', function(d){
+                return removeSpaces(d['category']) + 'DataContainer'
+            })
+        ///////////////////////////////////////////////////
+        
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
+        var updateMatrixRow = mergeMatrixDataContainers.selectAll('.matrixRow').data(function(d){
+            return d['rowData']
+        })
+        var enterMatrixRow = updateMatrixRow.enter().append('div').attr('class','matrixRow')
+        var exitMatrixRow = updateMatrixRow.exit()
+        var mergeMatrixRow = enterMatrixRow.merge(updateMatrixRow)
+            .attr('id',function(d){
+                return removeSpaces(d['tag']) + 'Row'
+            })
+        ///////////////////////////////////////////////////
+
+        ////////D3 COMPLETE GENERAL UPDATE PATTERN/////////
+        var updateMatrixData = mergeMatrixRow.selectAll('.matrixData').data(function(d){
+            return d['data']
+        })
+        var enterMatrixData = updateMatrixData.enter().append('div').attr('class','matrixData')
         var exitMatrixData = updateMatrixData.exit()
-        var mergeMatrixContainers = enterMatrixData.merge(updateMatrixData)
-            .attr('id',function(d){
-                return d['tag'] + 'RowData'
+        var mergeMatrixData = enterMatrixData.merge(updateMatrixData)
+            .text(function(d){
+                return d['text']
             })
-            .attr('class','matrixRow')
-            .text(function(d){ return d['tag'] })
-        
-
-        
+            .style('display','inline-block')
+            .style('width',cellWidth + 'px')
+        ///////////////////////////////////////////////////
 
 
-
-
-
-
-
-
-
-
-            // .attr('class', 'categoryCell')
-            // .style('display','inline-block')
-            // .style('width','100%')
-            // .style('height',categoryHeaderHeight + 'px')
-            // .text(function(d){
-            //     return d['category']
-            // })
-
-
-
-
-
-
-        // var updateHeaderRow = _svg.selectAll('g').data(_data[0]['data'])
-        // var enterHeaderRow = updateHeaderRow.enter().append('g')
-        // enterHeaderRow.append('rect')
-        // enterHeaderRow.append('text')
-
-        // var exitHeaderRow = updateHeaderRow.exit()
-        // var mergeHeaderRow = enterHeaderRow.merge(updateHeaderRow)
-        //     .attr('transform',function(d,i){
-        //         return 'translate(' + (cellWidth * (i + 1)) + ',0)'
-        //     })
-
-        // mergeHeaderRow.select('rect')
-        //     .attr('width',cellWidth)
-        //     .attr('height',mainHeaderHeight)
-        //     .attr('x',0)
-        //     .attr('y',0)
-        //     .style('fill','gray')
-        
-        // mergeHeaderRow.select('text')
-        //     .text(function(d){
-        //         return d['score']
-        //     })
-        //     .attr('x',0)
-        //     .attr('y',mainHeaderHeight-10)
-
-
-
-
-        
-
-        // console.log("drawing and updating")
     };
 };

@@ -1,3 +1,8 @@
+function removeSpaces(_text){
+    return _text.split(' ').join('')
+}
+
+
 var matrixData = dataIn['matrix']
 var precedentData = dataIn['developments']
 
@@ -19,3 +24,6 @@ function resizeMatrix(){
 window.onresize = function(){
     resizeMatrix()
 }
+
+
+
