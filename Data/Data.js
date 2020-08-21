@@ -28,7 +28,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#limitstogrowth"
         },{
             "tag": "Food",
             "category": "Place",
@@ -57,7 +58,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#food"
         },{
             "tag": "Habitat",
             "category": "Place",
@@ -86,7 +88,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#habitat"
         },{
             "tag": "Transportation",
             "category": "Place",
@@ -115,7 +118,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#transportation"
         },{
             "tag": "Water",
             "category": "Water",
@@ -144,7 +148,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Better","type":"Policy"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/water/#water"
         },{
             "tag": "Energy",
             "category": "Energy",
@@ -174,7 +179,8 @@ var dataIn = {
             "barriers":[
                 {"before":"Better","type":"Monetary"},
                 {"before":"Living Community Principles","type":"Policy"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/energy/#energy"
         },{
             "tag": "Civilized Environment",
             "category": "Health + Happiness",
@@ -203,7 +209,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#civilizedenvironment"
         },{
             "tag": "Neighborhood Design",
             "category": "Health + Happiness",
@@ -232,7 +239,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#neighborhooddesign"
         },{
             "tag": "Biophilia",
             "category": "Health + Happiness",
@@ -261,7 +269,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#biophilia"
         },{
             "tag": "Resilient Connections",
             "category": "Health + Happiness",
@@ -290,7 +299,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#resilientconnections"
         },{
             "tag": "Material Plan",
             "category": "Materials",
@@ -320,7 +330,8 @@ var dataIn = {
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"},
                 {"before":"Regenerative","type":"Policy"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/materials/#materialplan"
         },{
             "tag": "Embodied Energy & Carbon",
             "category": "Materials",
@@ -350,7 +361,8 @@ var dataIn = {
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"},
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/materials/#embodiedenergycarbon"
         },{
             "tag": "Waste",
             "category": "Materials",
@@ -379,7 +391,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/materials/#waste"
         },{
             "tag": "Neighborhood & Access",
             "category": "Equity",
@@ -408,7 +421,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#neighborhoodaccess"
         },{
             "tag": "Access to Nature",
             "category": "Equity",
@@ -437,7 +451,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#accesstonature"
         },{
             "tag": "Access to Community Services",
             "category": "Equity",
@@ -466,7 +481,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Living Community Principles","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#accesstocommunityservices"
         },{
             "tag": "Investment",
             "category": "Equity",
@@ -495,7 +511,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#investment"
         },{
             "tag": "Just Organizations",
             "category": "Equity",
@@ -524,7 +541,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#justorganizations"
         },{
             "tag": "Beauty and Spirit",
             "category": "Beauty",
@@ -553,7 +571,8 @@ var dataIn = {
             ],
             "barriers":[
                 {"before":"Regenerative","type":"Monetary"}
-            ]
+            ],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/beauty/#beautyspirit"
         },{
             "tag": "Inspiration",
             "category": "Beauty",
@@ -580,7 +599,8 @@ var dataIn = {
                     "text":"21st Century Development literacy is built into project. Community continually engaged, with ongoing monitoring and continual improvements communicated. Ecosystem and material cycles are obvious and understood."
                 }
             ],
-            "barriers":[]
+            "barriers":[],
+            "link":"https://www.21stcenturydevelopment.org/performance-areas/beauty/#inspiration"
         }
     ],
     "developments":{
