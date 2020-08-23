@@ -18,12 +18,29 @@ class DataEntryMatrix{
         //////////////////////////////////////////////////////////////////////////////////////
 
         var categoriesData = []
+        var thisProjectScores = {}
         for (var d of _data){
             if (categoriesData.includes(d['category']) != true){
                 categoriesData.push(d['category'])
             }
+
+            var itemScore = {}
+            itemScore['score'] = 'Standard'
+            itemScore['value'] = 0
+            itemScore['category'] = d['category']
+            thisProjectScores[d['tag']] = itemScore
         }
         this.categoriesData = categoriesData
+        this.projectScores = thisProjectScores
+        console.log('class data')
+        console.log(_data)
+
+        console.log('this project initial scores')
+        console.log(thisProjectScores)
+
+        
+        
+
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////THE BUILD CHART DATA FUNCTION IS USED TO UPDATE THE CLASS WHEN THE DATA SOURCE CHANGES////////"
@@ -45,13 +62,13 @@ class DataEntryMatrix{
         "///////CREATING AN SVG OBJECT TO DRAW TO////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
-        // THIS CHART USES DIVS INSTEAD OF SVG ELEMENTS
+        // THIS CHART CREATES DIVS INSTEAD OF SVG ELEMENTS
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////ADD GROUPS TO THE SVG FOR ORGANIZING DATA////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
-        // THIS CHART USES DIVS INSTEAD OF SVG ELEMENTS
+        // THIS CHART CREATES DIVS INSTEAD OF SVG ELEMENTS
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////AFTER CONSTRUCTING THIS CLASS, THE DRAW UPDATE FUNCTION SHOULD BE CALLED////////"
@@ -119,6 +136,8 @@ class DataEntryMatrix{
         '///////LOCALIZING CLASS VARIABLES AND DOING SOME LIGHT DATA SHAPING////////'
         var _thisClass = this
         var _data = this.data
+        var _thisProjectScores = this.projectScores
+
         var _categoriesData = this.categoriesData
         var _height = this.height
         var _width = this.width
@@ -254,6 +273,15 @@ class DataEntryMatrix{
             .style('padding-right',matrixCellPadding+'px')
             .style('padding-top',matrixCellPadding + 'px')
             .style('padding-bottom',matrixCellPadding + 'px')
+            .style('background',function(d){
+                var rowData = d3.select(this.parentNode).data()
+                var rowTag = rowData[0]['tag']
+                if (d['value'] != -1 && d['value'] <= _thisProjectScores[rowTag]['value']){
+                    return '#fbec40'
+                } else {
+                    return 'white'
+                }
+            })
         ///////////////////////////////////////////////////
         
         ////////////SELECTING AND ADDING EVENTS////////////
@@ -269,7 +297,15 @@ class DataEntryMatrix{
         })
         d3.selectAll('.matrixData').on('mouseout',function(d){
             d3.select(this).transition().duration(180)
-                .style('background','white')
+                .style('background',function(d){
+                    var rowData = d3.select(this.parentNode).data()
+                    var rowTag = rowData[0]['tag']
+                    if (d['value'] != -1 && d['value'] <= _thisProjectScores[rowTag]['value']){
+                        return '#fbec40'
+                    } else {
+                        return 'white'
+                    }
+                })
         })
 
         //////////////////
@@ -293,7 +329,15 @@ class DataEntryMatrix{
         })
         d3.selectAll('.rowHeader').on('mouseout',function(d){
             d3.select(this.parentNode).selectAll('.matrixData').transition().duration(180)
-                .style('background','white')
+                .style('background',function(d){
+                    var rowData = d3.select(this.parentNode).data()
+                    var rowTag = rowData[0]['tag']
+                    if (d['value'] != -1 && d['value'] <= _thisProjectScores[rowTag]['value']){
+                        return '#fbec40'
+                    } else {
+                        return 'white'
+                    }
+                })
                 .style('color',function(d){
                     if (d['value'] < 0){
                         return 'black'
@@ -323,7 +367,7 @@ class DataEntryMatrix{
                 .style('background','#666666')
                 .style('cursor','default')
         })
-        
+
         //////////////////
         '///////CATEGORY ROLLUP ON CLICKING ON CATEGORY HEADER////////'
         //////////////////
