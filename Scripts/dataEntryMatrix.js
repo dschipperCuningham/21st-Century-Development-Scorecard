@@ -309,6 +309,32 @@ class DataEntryMatrix{
         })
 
         //////////////////
+        '///////UPDATING "THIS PROJECT" DATA WHEN SELECTING A CELL IN THE MATRIX////////'
+        //////////////////
+
+        d3.selectAll('.matrixData').on('click',function(d){
+            var row = d3.select(this.parentNode)
+            var rowData = row.data()
+            var rowTag = rowData[0]['tag']
+
+            if (d['value'] != -1){
+                _thisProjectScores[rowTag]['value'] = d['value']
+                _thisProjectScores[rowTag]['score'] = d['score']
+            }
+
+            row.selectAll('.matrixData').transition().duration(180)
+                .style('background',function(d){
+                    var rowData = d3.select(this.parentNode).data()
+                    var rowTag = rowData[0]['tag']
+                    if (d['value'] != -1 && d['value'] <= _thisProjectScores[rowTag]['value']){
+                        return '#fbec40'
+                    } else {
+                        return 'white'
+                    }
+                })
+
+        })
+        //////////////////
         '///////HIGHLIGHTING ROWS WHEN HOVERING OVER HEADERS////////'
         //////////////////
         d3.selectAll('.rowHeader').on('mouseover',function(d){
