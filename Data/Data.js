@@ -472,7 +472,7 @@ var dataIn = {
                 },{
                     "score":"Living Community Principles",
                     "value":3,
-                    "text":"Provides access to basic services and amenities—places to shop, congregate, work, and learn—within 1/2 mile directly, or within 2 miles if direct public transportation accessible within 1/4 mile. Community must have a public transit network (range and capacity based on density of community).  Dedicated staff person allocated to robust community organizing and report-back within the design and construction process. Collaboration with community artists and organizers to creatively bring the project to public consciousness. Addresses issues of the neighborhood during the design process."
+                    "text":"Provides access to basic services and amenities (places to shop, congregate, work, and learn) within 1/2 mile directly, or within 2 miles if direct public transportation accessible within 1/4 mile. Community must have a public transit network (range and capacity based on density of community).  Dedicated staff person allocated to robust community organizing and report-back within the design and construction process. Collaboration with community artists and organizers to creatively bring the project to public consciousness. Addresses issues of the neighborhood during the design process."
                 },{
                     "score":"Regenerative",
                     "value":4,
@@ -544,7 +544,7 @@ var dataIn = {
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#justorganizations"
         },{
-            "tag": "Beauty and Spirit",
+            "tag": "Beauty & Spirit",
             "category": "Beauty",
             "data":[
                 {
@@ -604,33 +604,33 @@ var dataIn = {
         }
     ],
     "developments":{
-        // "This Project":{
-        //     "name":"This Project",
-        //     "description":"",
-        //     "location":"",
-        //     "scores":{
-        //         "Limits to Growth":{"score":"Standard","value":0,"category":"Place"},
-        //         "Food":{"score":"Standard","value":0,"category":"Place"},
-        //         "Habitat":{"score":"Standard","value":0,"category":"Place"},
-        //         "Transportation":{"score":"Standard","value":0,"category":"Place"},
-        //         "Water":{"score":"Standard","value":0,"category":"Water"},
-        //         "Energy":{"score":"Standard","value":0,"category":"Energy"},
-        //         "Civilized Environment":{"score":"Standard","value":0,"category":"Health + Happiness"},
-        //         "Neighborhood Design":{"score":"Standard","value":0,"category":"Health + Happiness"},
-        //         "Biophilia":{"score":"Standard","value":0,"category":"Health + Happiness"},
-        //         "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
-        //         "Material Plan":{"score":"Standard","value":0,"category":"Materials"},
-        //         "Embodied Energy & Carbon":{"score":"Standard","value":0,"category":"Materials"},
-        //         "Waste":{"score":"Standard","value":0,"category":"Materials"},
-        //         "Neighborhood & Access":{"score":"Standard","value":0,"category":"Equity"},
-        //         "Access to Nature":{"score":"Standard","value":0,"category":"Equity"},
-        //         "Access to Community Services":{"score":"Standard","value":0,"category":"Equity"},
-        //         "Investment":{"score":"Standard","value":0,"category":"Equity"},
-        //         "Just Organizations":{"score":"Standard","value":0,"category":"Equity"},
-        //         "Beauty & Spirit":{"score":"Standard","value":0,"category":"Beauty"},
-        //         "Inspiration":{"score":"Standard","value":0,"category":"Beauty"}
-        //     }
-        // },
+        "This Project":{
+            "name":"This Project",
+            "description":"",
+            "location":"",
+            "scores":{
+                "Limits to Growth":{"score":"Standard","value":0,"category":"Place"},
+                "Food":{"score":"Standard","value":0,"category":"Place"},
+                "Habitat":{"score":"Standard","value":0,"category":"Place"},
+                "Transportation":{"score":"Standard","value":0,"category":"Place"},
+                "Water":{"score":"Standard","value":0,"category":"Water"},
+                "Energy":{"score":"Standard","value":0,"category":"Energy"},
+                "Civilized Environment":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Standard","value":0,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Standard","value":0,"category":"Materials"},
+                "Waste":{"score":"Standard","value":0,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Standard","value":0,"category":"Equity"},
+                "Access to Nature":{"score":"Standard","value":0,"category":"Equity"},
+                "Access to Community Services":{"score":"Standard","value":0,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Just Organizations":{"score":"Standard","value":0,"category":"Equity"},
+                "Beauty & Spirit":{"score":"Standard","value":0,"category":"Beauty"},
+                "Inspiration":{"score":"Standard","value":0,"category":"Beauty"}
+            }
+        },
         "Abundance":{
             "name":"Abundance EcoVillage",
             "description":"",

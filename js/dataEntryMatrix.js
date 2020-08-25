@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 class DataEntryMatrix{
-    constructor(_data,_div,_width,_height){
+    constructor(_model,_div,_width,_height){
         //////////////////////////////////////////////////////////////////////////////////////
         "///////ADDING THE INITIAL PARAMETERS BASED ON USER INPUT////////"
         //////////////////////////////////////////////////////////////////////////////////////
@@ -17,37 +17,27 @@ class DataEntryMatrix{
         "///////ANY ONE TIME DATA SHAPING SHOULD HAPPEN HERE////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
-        var categoriesData = []
-        var thisProjectScores = {}
-        for (var d of _data){
-            if (categoriesData.includes(d['category']) != true){
-                categoriesData.push(d['category'])
-            }
+        console.log('matrix data')
+        console.log(_model.matrixData)
 
-            var itemScore = {}
-            itemScore['score'] = 'Standard'
-            itemScore['value'] = 0
-            itemScore['category'] = d['category']
-            thisProjectScores[d['tag']] = itemScore
-        }
-        this.categoriesData = categoriesData
-        this.projectScores = thisProjectScores
-        console.log('class data')
-        console.log(_data)
+        this.categoriesData = _model.categoryData
+        console.log('categories data')
+        console.log(this.categoriesData)
+
+        this.projectScores = _model.projectScores
+        console.log('project scores')
+        console.log(this.projectScores)
 
         console.log('this project initial scores')
-        console.log(thisProjectScores)
-
-        
-        
-
+        console.log(this.projectScores)
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////THE BUILD CHART DATA FUNCTION IS USED TO UPDATE THE CLASS WHEN THE DATA SOURCE CHANGES////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
-        this.data = this.buildChartData(_data);
-        console.log(this.data)
+        this.structuredData = this.structureRowData(_model.matrixData);
+        console.log('data structured')
+        console.log(this.structuredData)
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////BACK END CONTROLS FOR EDITING THE GRAPHIC////////"
@@ -77,7 +67,7 @@ class DataEntryMatrix{
         return
     };
 
-    buildChartData(_data){
+    structureRowData(_data){
         //////////////////////////////////////////////////////////////////////////////////////
         "///////ANY GRAPHIC SPECIFIC DATA SHAPING SHOULD HAPPEN HERE////////"
         //////////////////////////////////////////////////////////////////////////////////////
@@ -104,7 +94,7 @@ class DataEntryMatrix{
     };
 
     
-    resize(_width,_height){
+    resize(_dataModel,_width,_height){
         //////////////////////////////////////////////////////////////////////////////////////
         "///////CALL THIS FUNCTION TO RESIZE THE GRAPHIC////////"
         //////////////////////////////////////////////////////////////////////////////////////
@@ -113,19 +103,20 @@ class DataEntryMatrix{
         this.centerX = _width/2;
         this.centerY = _height/2;
 
-        this.drawUpdate()
+        this.drawUpdate(_dataModel)
         return
     };
 
-    updateData(_data,_levelName){
+    updateData(_dataModel){
         //////////////////////////////////////////////////////////////////////////////////////
         "///////CALL THIS FUNCTION WITH NEW DATA TO UPDATE THE DATA IN THE CHART////////"
         //////////////////////////////////////////////////////////////////////////////////////
-        var updatedData = this.buildChartData(_data)
-        this.drawUpdate()
+        var updatedData = this.structureRowData(_dataModel.matrixData)
+        this.structuredData = updatedData
+        this.drawUpdate(_dataModel)
     };
 
-    drawUpdate(){
+    drawUpdate(_model){
         //////////////////////////////////////////////////////////////////////////////////////
         "///////THIS FUNCTION DOES THE HEAVY LIFTING FOR CREATING AND UPDATING GRAPHICS////////"
         "///////IT IS DESIGNED TO BE RUN WITHOUT RECREATING ELEMENTS, OPTING INSTEAD TO UPDATE THOSE THAT EXIST////////"
@@ -135,7 +126,7 @@ class DataEntryMatrix{
 
         '///////LOCALIZING CLASS VARIABLES AND DOING SOME LIGHT DATA SHAPING////////'
         var _thisClass = this
-        var _data = this.data
+        var _data = this.structuredData
         var _thisProjectScores = this.projectScores
 
         var _categoriesData = this.categoriesData
@@ -320,7 +311,12 @@ class DataEntryMatrix{
             if (d['value'] != -1){
                 _thisProjectScores[rowTag]['value'] = d['value']
                 _thisProjectScores[rowTag]['score'] = d['score']
+                _model.setProjectScores(_thisProjectScores)
+                _model.notifyObservers()
             }
+            
+            // logging model for tracking purposes
+            console.log(_model)
 
             row.selectAll('.matrixData').transition().duration(180)
                 .style('background',function(d){
@@ -332,6 +328,8 @@ class DataEntryMatrix{
                         return 'white'
                     }
                 })
+            
+            
 
         })
         //////////////////
