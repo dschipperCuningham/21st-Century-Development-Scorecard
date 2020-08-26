@@ -21,7 +21,28 @@ function resizeMatrix(){
     )
 }
 
-window.onresize = function(){
-    resizeMatrix()
+
+
+var lineChartId = 'lineChart'
+var lineChartCanvas = document.getElementById(lineChartId)
+var lineChartWidth = lineChartCanvas.clientWidth
+var lineChartHeight = lineChartCanvas.clientHeight
+var lineChart = new LineChart(dataModel,lineChartCanvas,lineChartWidth,lineChartHeight)
+dataModel.addObserver(lineChart)
+lineChart.drawUpdate(dataModel)
+
+function resizeLineChart(){
+    // console.log('the matrix was resized')
+    lineChart.resize(
+        dataModel,
+        document.getElementById(lineChartId).clientWidth,
+        document.getElementById(lineChartId).clientHeight
+    )
 }
 
+
+
+window.onresize = function(){
+    resizeMatrix()
+    resizeLineChart()
+}

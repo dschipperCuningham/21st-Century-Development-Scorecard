@@ -7,14 +7,19 @@
         <script src="node_modules/d3/dist/d3.js" charset="utf-8"></script>
         <script src="js/dataModel.js" charset="utf-8"></script>
         <script src="js/dataEntryMatrix.js" charset="utf-8"></script>
+        <script src="js/lineChart.js" charset="utf-8"></script>
         <link rel="stylesheet" href="style.css">
         
     </head>
 
     <body>
-        
-        <div id="matrixCanvas">
+        <div class="flex-container">
+            <div id="matrixCanvas"></div>
+            <div id="dataVizCanvas">
+                <div id="lineChart"></div>
+            </div>
         </div>
+        
         <script src="APP.js" charset="utf-8"></script>
     </body>
 </html>

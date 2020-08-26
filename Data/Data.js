@@ -374,11 +374,11 @@ var dataIn = {
                 },{
                     "score":"Good",
                     "value":1,
-                    "text":"Material selection for recycled/recyclable materials. Waste collection facilities and waste reduction standards in place."
+                    "text":"Material selection for recycled / recyclable materials. Waste collection facilities and waste reduction standards in place."
                 },{
                     "score":"Better",
                     "value":2,
-                    "text":"Reduction in construction waste. Material selection for recycled/recyclable materials. Innovative waste collection facility with waste to energy."
+                    "text":"Reduction in construction waste. Material selection for recycled / recyclable materials. Innovative waste collection facility with waste to energy."
                 },{
                     "score":"Living Community Principles",
                     "value":3,
@@ -386,7 +386,7 @@ var dataIn = {
                 },{
                     "score":"Regenerative",
                     "value":4,
-                    "text":"All compostable and chemical material cycles are closed-loop. Community can process waste from other communities."
+                    "text":"All compostable and chemical material cycles are closed loop. Community can process waste from other communities."
                 }
             ],
             "barriers":[
@@ -476,7 +476,7 @@ var dataIn = {
                 },{
                     "score":"Regenerative",
                     "value":4,
-                    "text":"Extends scope of services to include a robust predesign and community organizing process. Hires community Design Advocates (community advocates/organizers) to support the civic, cultural, and communal aspects to be embedded in the design concept and future programming of the development. Utilize small-scale, low barrier-to-entry design interventions at the front end to test and build viable accessibility. Actively advocate for policies and procedures that directly benefit current neighborhood."
+                    "text":"Extends scope of services to include a robust predesign and community organizing process. Hires community Design Advocates (community advocates / organizers) to support the civic, cultural, and communal aspects to be embedded in the design concept and future programming of the development. Utilize small-scale, low barrier-to-entry design interventions at the front end to test and build viable accessibility. Actively advocate for policies and procedures that directly benefit current neighborhood."
                 }
             ],
             "barriers":[

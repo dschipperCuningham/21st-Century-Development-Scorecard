@@ -181,7 +181,7 @@ class DataEntryMatrix{
             })
             .style('display','table-cell')
             .style('width',function(d,i){
-                    return cellWidth + 'px'
+                    return cellWidth-1 + 'px'
             })
             .style('padding-top',function(){
                 return mainHeaderTopBottomPadding + 'px'
@@ -273,6 +273,7 @@ class DataEntryMatrix{
                     return 'white'
                 }
             })
+            .style('outline','none')
         ///////////////////////////////////////////////////
         
         ////////////SELECTING AND ADDING EVENTS////////////
@@ -283,11 +284,12 @@ class DataEntryMatrix{
         '///////HIGHLIGHTING MATRIX CELLS ON HOVER////////'
         //////////////////
         d3.selectAll('.matrixData').on('mouseover',function(d){
-            d3.select(this).transition().duration(180)
+            d3.select(this).transition().duration(150)
                 .style('background','#fbec40')
+                .style('outline','solid 2px')
         })
         d3.selectAll('.matrixData').on('mouseout',function(d){
-            d3.select(this).transition().duration(180)
+            d3.select(this).transition().duration(150)
                 .style('background',function(d){
                     var rowData = d3.select(this.parentNode).data()
                     var rowTag = rowData[0]['tag']
@@ -297,6 +299,7 @@ class DataEntryMatrix{
                         return 'white'
                     }
                 })
+                .style('outline','none')
         })
 
         //////////////////
