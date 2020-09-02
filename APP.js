@@ -2,6 +2,16 @@ function removeSpaces(_text){
     return _text.split(' ').join('')
 }
 
+function objToArray(_obj){
+    let newArray = []
+    for (let key in _obj){
+        let datum = _obj[key]
+        datum['key'] = key
+        newArray.push(datum)
+    }
+    return newArray
+}
+
 const dataModel = new MatrixAndPrecedentsDataModel(dataIn,'matrix','developments','This Project')
 
 var matrixId = 'matrixCanvas'

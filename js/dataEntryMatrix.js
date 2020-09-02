@@ -399,7 +399,7 @@ class DataEntryMatrix{
         '///////CATEGORY ROLLUP ON CLICKING ON CATEGORY HEADER////////'
         //////////////////
         d3.selectAll('.categoryHeader').on('click',function(d){
-            d3.select(this.parentNode).select('.matrixDataContainers').transition().duration(400)
+            d3.select(this.parentNode).select('.matrixDataContainers').transition().duration(200)
                 .style('display',function(d){
                     if (d['display'] == 'visible'){
                         d['display'] = 'hidden'

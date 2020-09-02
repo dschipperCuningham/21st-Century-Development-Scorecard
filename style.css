@@ -96,3 +96,7 @@ div{
     overflow-wrap: anywhere;
 }
 
+.chartLine{
+    stroke-width: 2px;
+    /* fill: none; */
+}
