@@ -196,7 +196,7 @@ var dataIn = {
                 },{
                     "score":"Better",
                     "value":2,
-                    "text":"Community has some organization and collaborates on 1 or 2 of the Living Community listed programs."
+                    "text":"Community has some organization and collaborates on 1 or 2 of the Living Community Principles Community listed programs."
                 },{
                     "score":"Living Community Principles",
                     "value":3,
@@ -226,7 +226,7 @@ var dataIn = {
                 },{
                     "score":"Better",
                     "value":2,
-                    "text":"Community has some organization and collaborates on 1 to 2 of the listed Living Community listed programs."
+                    "text":"Community has some organization and collaborates on 1 to 2 of the listed Living Community Principles Community listed programs."
                 },{
                     "score":"Living Community Principles",
                     "value":3,
@@ -234,7 +234,7 @@ var dataIn = {
                 },{
                     "score":"Regenerative",
                     "value":4,
-                    "text":"Community encourages humans and other living things to thrive. Clean air, pure water, nutritious food, and secure, comfortable shelter are provided, with opportunities for physical activity, recreation, creative endeavors, social engagement, and stress reduction."
+                    "text":"Community encourages humans and other Living Community Principles things to thrive. Clean air, pure water, nutritious food, and secure, comfortable shelter are provided, with opportunities for physical activity, recreation, creative endeavors, social engagement, and stress reduction."
                 }
             ],
             "barriers":[
@@ -320,7 +320,7 @@ var dataIn = {
                 },{
                     "score":"Living Community Principles",
                     "value":3,
-                    "text":"Living Materials Implementation Plan in place. No Red List materials. Responsible industry and living economy sourcing--see Living Building Challenge."
+                    "text":"Living Community Principles Materials Implementation Plan in place. No Red List materials. Responsible industry and Living Community Principles economy sourcing--see Living Community Principles Building Challenge."
                 },{
                     "score":"Regenerative",
                     "value":4,
@@ -412,7 +412,7 @@ var dataIn = {
                 },{
                     "score":"Living Community Principles",
                     "value":3,
-                    "text":"All interior spaces programmed to accommodate public need. Full ground-floor public accessibility throughout development. Communal space supports local functional needs of the built environment, focused on the immediate neighborhood. Community Benefits Agreement includes binding language creating community access.  Project is designed to create human-scaled places. Promotes culture and interaction. Meets Living Community Challenge specifications."
+                    "text":"All interior spaces programmed to accommodate public need. Full ground-floor public accessibility throughout development. Communal space supports local functional needs of the built environment, focused on the immediate neighborhood. Community Benefits Agreement includes binding language creating community access.  Project is designed to create human-scaled places. Promotes culture and interaction. Meets Living Community Principles Community Challenge specifications."
                 },{
                     "score":"Regenerative",
                     "value":4,
@@ -528,7 +528,7 @@ var dataIn = {
                 },{
                     "score":"Better",
                     "value":2,
-                    "text":"Entities involved use an Integrated Design Process, with a relational contract, hold-harmless agreement, and incentive pool. All entities pay an appropriate living wage."
+                    "text":"Entities involved use an Integrated Design Process, with a relational contract, hold-harmless agreement, and incentive pool. All entities pay an appropriate Living Community Principles wage."
                 },{
                     "score":"Living Community Principles",
                     "value":3,
@@ -680,6 +680,182 @@ var dataIn = {
                 "Investment":{"score":"Standard","value":0,"category":"Equity"},
                 "Inspiration":{"score":"Standard","value":0,"category":"Beauty"}
             }
+        },
+        "RiverCity":{
+            "name":"RiverCity Gothenburg",
+            "description":"Alvstaden is an urban redevelopment vision for the city of Gothensburg. The plan will unite seven city districts and create a sustainable lifestyle, connect the city communities, create a vibrant city center, and promote an easy way to live sustainably.",
+            "location":"International",
+            "scores":{
+                "Limits to Growth":{"score":"Better","value":2,"category":"Place"},
+                "Food":{"score":"Standard","value":0,"category":"Place"},
+                "Habitat":{"score":"Good","value":1,"category":"Place"},
+                "Transportation":{"score":"Living Community Principles","value":3,"category":"Place"},
+                "Water":{"score":"Good","value":1,"category":"Water"},
+                "Energy":{"score":"Good","value":1,"category":"Energy"},
+                "Civilized Environment":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Good","value":1,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Good","value":1,"category":"Materials"},
+                "Waste":{"score":"Standard","value":0,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Better","value":2,"category":"Equity"},
+                "Access to Nature":{"score":"Good","value":1,"category":"Equity"},
+                "Access to Community Services":{"score":"Better","value":2,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Better","value":2,"category":"Beauty"}
+            }
+        },
+        "Aria":{
+            "name":"Aria Denver",
+            "description":"Aria is a residential development with retail and office space. The project will have a diversity of housing types. Part of Aria is a redevelopment of a convent. Aria is a model for social, environmental and economically conscious design, creating a community that appeals to all generations.",
+            "location":"US",
+            "scores":{
+                "Limits to Growth":{"score":"Good","value":1,"category":"Place"},
+                "Food":{"score":"Good","value":1,"category":"Place"},
+                "Habitat":{"score":"Standard","value":0,"category":"Place"},
+                "Transportation":{"score":"Good","value":1,"category":"Place"},
+                "Water":{"score":"Good","value":1,"category":"Water"},
+                "Energy":{"score":"Standard","value":0,"category":"Energy"},
+                "Civilized Environment":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Good","value":1,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Good","value":1,"category":"Materials"},
+                "Waste":{"score":"Standard","value":0,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Good","value":1,"category":"Equity"},
+                "Access to Nature":{"score":"Good","value":1,"category":"Equity"},
+                "Access to Community Services":{"score":"Good","value":1,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Good","value":1,"category":"Beauty"}
+            }
+        },
+        "Arkadien":{
+            "name":"Arkadien Winnenden",
+            "description":"Arkadien is a brownfield reclamation and new development of high density housing, targeting all ages by providing different housing types, developing innovative and aesthetic storm-water planning strategies, and promoting a walkable community.",
+            "location":"International",
+            "scores":{
+                "Limits to Growth":{"score":"Better","value":2,"category":"Place"},
+                "Food":{"score":"Standard","value":0,"category":"Place"},
+                "Habitat":{"score":"Good","value":1,"category":"Place"},
+                "Transportation":{"score":"Good","value":1,"category":"Place"},
+                "Water":{"score":"Better","value":2,"category":"Water"},
+                "Energy":{"score":"Better","value":2,"category":"Energy"},
+                "Civilized Environment":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Better","value":2,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Good","value":1,"category":"Materials"},
+                "Waste":{"score":"Good","value":1,"category":"Materials"},
+                // "Neighborhood & Access":{"score":"Good","value":1,"category":"Equity"},
+                "Access to Nature":{"score":"Better","value":2,"category":"Equity"},
+                "Access to Community Services":{"score":"Good","value":1,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Good","value":1,"category":"Beauty"}
+            }
+        },
+        "BedZED":{
+            "name":"BedZED Beddington Zero Energy Development",
+            "description":"BedZED Beddington Zero Energy Development is a brownfield development that contains a mixed use sustainable community with residences, office space, community space. This zero-carbon development encourages a lifestyle dedicated to reducing electricity, heating, water and fossil fuel transportation demands.",
+            "location":"International",
+            "scores":{
+                "Limits to Growth":{"score":"Better","value":2,"category":"Place"},
+                "Food":{"score":"Good","value":1,"category":"Place"},
+                "Habitat":{"score":"Standard","value":0,"category":"Place"},
+                "Transportation":{"score":"Better","value":2,"category":"Place"},
+                "Water":{"score":"Better","value":2,"category":"Water"},
+                "Energy":{"score":"Better","value":2,"category":"Energy"},
+                "Civilized Environment":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Better","value":2,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Better","value":2,"category":"Materials"},
+                "Waste":{"score":"Better","value":2,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Better","value":2,"category":"Equity"},
+                "Access to Nature":{"score":"Good","value":1,"category":"Equity"},
+                "Access to Community Services":{"score":"Good","value":1,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Good","value":1,"category":"Beauty"}
+            }
+        },
+        "Bo01":{
+            "name":"Bo01",
+            "description":"Bo01 is a mixed use development that aspires to demonstrate modern ecological urban Living Community Principles, brownfield reclamation, New construction: residential, commercial, services. The development uses 100% local renewable energy, and minimized vehicle transportation.",
+            "location":"International",
+            "scores":{
+                "Limits to Growth":{"score":"Better","value":2,"category":"Place"},
+                "Food":{"score":"Good","value":1,"category":"Place"},
+                "Habitat":{"score":"Better","value":2,"category":"Place"},
+                "Transportation":{"score":"Living Community Principles","value":3,"category":"Place"},
+                "Water":{"score":"Better","value":2,"category":"Water"},
+                "Energy":{"score":"Better","value":2,"category":"Energy"},
+                "Civilized Environment":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Living Community Principles","value":3,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Living Community Principles","value":3,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Better","value":2,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Good","value":1,"category":"Materials"},
+                "Waste":{"score":"Better","value":2,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Better","value":2,"category":"Equity"},
+                "Access to Nature":{"score":"Living Community Principles","value":3,"category":"Equity"},
+                "Access to Community Services":{"score":"Living Community Principles","value":3,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Living Community Principles","value":3,"category":"Beauty"}
+            }
+        },
+        "Civita":{
+            "name":"Civita",
+            "description":"Civita is a planned development on the site of a former gravel quarry. Through four stages, the development will build residential, commercial and office spaces in a walkable community. Civita will create a range of housing opportunities, foster a sense of place, preserve open space, increase alternative transportation options, community gardens, LEED ND Gold",
+            "location":"US",
+            "scores":{
+                "Limits to Growth":{"score":"Good","value":1,"category":"Place"},
+                "Food":{"score":"Good","value":1,"category":"Place"},
+                "Habitat":{"score":"Good","value":1,"category":"Place"},
+                "Transportation":{"score":"Better","value":2,"category":"Place"},
+                "Water":{"score":"Good","value":1,"category":"Water"},
+                "Energy":{"score":"Good","value":1,"category":"Energy"},
+                "Civilized Environment":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Standard","value":0,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Standard","value":0,"category":"Materials"},
+                "Waste":{"score":"Standard","value":0,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Better","value":2,"category":"Equity"},
+                "Access to Nature":{"score":"Good","value":1,"category":"Equity"},
+                "Access to Community Services":{"score":"Better","value":2,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Good","value":1,"category":"Beauty"}
+            }
+        },
+        "Confluence":{
+            "name":"La Confluence",
+            "description":"La Confluence is a brownfield redevelopment project in the city of Lyon that will turn a former industrial site into a sustainable neighborhood. The project includes commercial and residential buildings that explore contemporary building practices and architecture to increase quality of life while promoting a sustainable urban lifestyle.",
+            "location":"International",
+            "scores":{
+                "Limits to Growth":{"score":"Better","value":2,"category":"Place"},
+                "Food":{"score":"Good","value":1,"category":"Place"},
+                "Habitat":{"score":"Better","value":2,"category":"Place"},
+                "Transportation":{"score":"Living Community Principles","value":3,"category":"Place"},
+                "Water":{"score":"Good","value":1,"category":"Water"},
+                "Energy":{"score":"Better","value":2,"category":"Energy"},
+                "Civilized Environment":{"score":"Good","value":1,"category":"Health + Happiness"},
+                "Neighborhood Design":{"score":"Living Community Principles","value":3,"category":"Health + Happiness"},
+                "Biophilia":{"score":"Better","value":2,"category":"Health + Happiness"},
+                "Resilient Connections":{"score":"Standard","value":0,"category":"Health + Happiness"},
+                "Material Plan":{"score":"Good","value":1,"category":"Materials"},
+                "Embodied Energy & Carbon":{"score":"Standard","value":0,"category":"Materials"},
+                "Waste":{"score":"Good","value":1,"category":"Materials"},
+                "Neighborhood & Access":{"score":"Living Community Principles","value":3,"category":"Equity"},
+                "Access to Nature":{"score":"Better","value":2,"category":"Equity"},
+                "Access to Community Services":{"score":"Good","value":1,"category":"Equity"},
+                "Investment":{"score":"Standard","value":0,"category":"Equity"},
+                "Inspiration":{"score":"Better","value":1,"category":"Beauty"}
+            }
         }
+        
     }
 }

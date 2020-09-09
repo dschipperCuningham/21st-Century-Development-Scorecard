@@ -162,13 +162,13 @@ class LineChart{
             .attr('fill-opacity',0)
         let exitLines = updateLines.exit()
         let mergeLines = enterLines.merge(updateLines).transition()
-            .style('stroke',function(d){
-                if (d['name'] == _projectName){
-                    return '#fbec40'
-                } else {
-                    return 'gray'
-                }
-            })
+            // .style('stroke',function(d){
+            //     if (d['name'] == _projectName){
+            //         return '#fbec40'
+            //     } else {
+            //         return 'gray'
+            //     }
+            // })
             .attr('d',function(d){
                 let coords = []
                 for (let datum of _matrixData){
