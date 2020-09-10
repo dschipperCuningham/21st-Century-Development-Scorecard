@@ -27,7 +27,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#limitstogrowth"
         },{
@@ -57,7 +57,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#food"
         },{
@@ -87,7 +87,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#habitat"
         },{
@@ -117,7 +117,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/place/#transportation"
         },{
@@ -147,7 +147,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Better","type":"Policy"}
+                {"before":2,"type":"Policy"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/water/#water"
         },{
@@ -177,7 +177,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Better","type":"Monetary"},
+                {"before":2,"type":"Monetary"},
                 {"before":"Living Community Principles","type":"Policy"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/energy/#energy"
@@ -208,7 +208,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"}
+                {"before":3,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#civilizedenvironment"
         },{
@@ -238,7 +238,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"}
+                {"before":3,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#neighborhooddesign"
         },{
@@ -268,7 +268,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"}
+                {"before":3,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#biophilia"
         },{
@@ -298,7 +298,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"}
+                {"before":3,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/health-plus-happiness/#resilientconnections"
         },{
@@ -328,8 +328,8 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"},
-                {"before":"Regenerative","type":"Policy"}
+                {"before":3,"type":"Monetary"},
+                {"before":4,"type":"Policy"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/materials/#materialplan"
         },{
@@ -359,8 +359,8 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"},
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":3,"type":"Monetary"},
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/materials/#embodiedenergycarbon"
         },{
@@ -390,7 +390,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/materials/#waste"
         },{
@@ -420,7 +420,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#neighborhoodaccess"
         },{
@@ -450,7 +450,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#accesstonature"
         },{
@@ -480,7 +480,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Living Community Principles","type":"Monetary"}
+                {"before":3,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#accesstocommunityservices"
         },{
@@ -510,7 +510,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#investment"
         },{
@@ -540,7 +540,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/equity/#justorganizations"
         },{
@@ -570,7 +570,7 @@ var dataIn = {
                 }
             ],
             "barriers":[
-                {"before":"Regenerative","type":"Monetary"}
+                {"before":4,"type":"Monetary"}
             ],
             "link":"https://www.21stcenturydevelopment.org/performance-areas/beauty/#beautyspirit"
         },{

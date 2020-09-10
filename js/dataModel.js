@@ -34,6 +34,33 @@ class MatrixAndPrecedentsDataModel {
         return this.precedentData[this.projectName]['scores'];
     }
 
+    get determineSuggestions(){
+        let projectScores = this.projectScores
+        let maximumScore = 0
+        let lowestScoringAttributes = []
+        while (maximumScore < 5 && lowestScoringAttributes.length < 5){
+            let projectsIdentified = 0
+            for (let d of this.matrixData){
+                    let barrier = 100
+                    for (let b of d['barriers']){
+                        if (b['before'] < barrier){
+                            barrier = b['before']
+                        }
+                    }
+
+                    if (projectScores[d['tag']]['value'] == maximumScore && 
+                                    maximumScore < barrier && lowestScoringAttributes.length < 5){
+                        lowestScoringAttributes.push(projectScores[d['tag']])
+                        projectsIdentified += 1
+                        }
+            }
+
+            maximumScore += 1
+            
+        }
+
+        return lowestScoringAttributes
+    }
 
     setProjectScores(_newScores) {
         this.precedentData[this.projectName]['scores'] = _newScores;
