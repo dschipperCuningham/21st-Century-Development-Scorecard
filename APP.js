@@ -31,8 +31,6 @@ function resizeMatrix(){
     )
 }
 
-
-
 var lineChartId = 'lineChart'
 var lineChartCanvas = document.getElementById(lineChartId)
 var lineChartWidth = lineChartCanvas.clientWidth
@@ -50,9 +48,24 @@ function resizeLineChart(){
     )
 }
 
+var suggestionListId = 'opportunitiesList'
+var suggestionsContainer = document.getElementById(suggestionListId)
+var suggestionListWidth = suggestionsContainer.clientWidth
+var suggestionListHeight = suggestionsContainer.clientHeight
+var suggestionList = new suggestingOpportunities(dataModel,suggestionsContainer,suggestionListWidth,suggestionListHeight)
+dataModel.addObserver(suggestionList)
+suggestionList.drawUpdate(dataModel)
 
+function resizeSuggestions(){
+    suggestionList.resize(
+        dataModel,
+        document.getElementById(suggestionListId).clientWidth,
+        document.getElementById(suggestionListId).clientHeight
+    )
+}
 
 window.onresize = function(){
     resizeMatrix()
     resizeLineChart()
+    resizeSuggestions()
 }

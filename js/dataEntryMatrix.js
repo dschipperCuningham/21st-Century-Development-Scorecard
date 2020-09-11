@@ -315,6 +315,7 @@ class DataEntryMatrix{
                 _thisProjectScores[rowTag]['value'] = d['value']
                 _thisProjectScores[rowTag]['score'] = d['score']
                 _model.setProjectScores(_thisProjectScores)
+                _model.determineSuggestions()
                 _model.notifyObservers()
             }
             

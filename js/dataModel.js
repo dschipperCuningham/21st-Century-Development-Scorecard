@@ -4,7 +4,7 @@ class MatrixAndPrecedentsDataModel {
         this.precedentData = _rawData[_precedentDataKey];
         this.projectName = _activeProjectName;
         this.categoryData = this.buildCategories(this.matrixData)
-        
+        this.suggestions = this.determineSuggestions()
         this.observers = [];
     }
 
@@ -34,7 +34,7 @@ class MatrixAndPrecedentsDataModel {
         return this.precedentData[this.projectName]['scores'];
     }
 
-    get determineSuggestions(){
+    determineSuggestions(){
         let projectScores = this.projectScores
         let maximumScore = 0
         let lowestScoringAttributes = []
@@ -49,7 +49,9 @@ class MatrixAndPrecedentsDataModel {
                     }
 
                     if (projectScores[d['tag']]['value'] == maximumScore && 
-                                    maximumScore < barrier && lowestScoringAttributes.length < 5){
+                                    maximumScore < barrier && 
+                                    lowestScoringAttributes.length < 5 &&
+                                    projectScores[d['tag']]['value'] < 4){
                         lowestScoringAttributes.push(projectScores[d['tag']])
                         projectsIdentified += 1
                         }
@@ -64,5 +66,6 @@ class MatrixAndPrecedentsDataModel {
 
     setProjectScores(_newScores) {
         this.precedentData[this.projectName]['scores'] = _newScores;
+        this.suggestions = this.determineSuggestions()
     }
 }

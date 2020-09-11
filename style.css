@@ -113,3 +113,20 @@ div{
     stroke-width: 2px;
     /* fill: none; */
 }
+
+#opportunitiesBox{
+    width: 60%;
+}
+
+#opportunitiesList{
+    margin-left: 30px;
+}
+
+.suggestionRow{
+    
+}
+.suggestionCell{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}

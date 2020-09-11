@@ -203,8 +203,11 @@ class LineChart{
             .style('fill',function(d){
                 if (d['name'] == _projectName){
                     return '#fbec40'
+                } else if (d['location'] == 'US'){
+                    return 'tomato'
                 } else {
-                    return 'gray'
+                    // console.log(d)
+                    return 'lightgray'
                 }
             })
         
@@ -260,7 +263,7 @@ class LineChart{
             .attr('fill',function(d){
                 if (d['name'] == _projectName){
                     return '#fbec40'
-                } else {
+                }else{
                     return 'black'
                 }
             })
