@@ -39,13 +39,7 @@ div{
     position: sticky;
     top: 0;
 }
-#opportunitiesBox{
-    
-    height: 600;
-    top: 500px;
-    width: 100%;
-    position: sticky;
-}
+
 
 .matrixHeader{
     position: sticky;
@@ -114,8 +108,19 @@ div{
     /* fill: none; */
 }
 
+#opportunitiesAndRadar{
+    width: 100%;
+    height: 800;
+    top: 500px;
+    position: sticky;
+    display: table;
+}
 #opportunitiesBox{
-    width: 60%;
+    display: table-cell;
+    width: 55%;
+}
+#radarChart{
+    display: table-cell;
 }
 
 #opportunitiesList{

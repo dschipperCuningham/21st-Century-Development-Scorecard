@@ -71,7 +71,7 @@ class DataEntryMatrix{
         //////////////////////////////////////////////////////////////////////////////////////
         "///////ANY GRAPHIC SPECIFIC DATA SHAPING SHOULD HAPPEN HERE////////"
         //////////////////////////////////////////////////////////////////////////////////////
-        console.log(_data)
+        // console.log(_data)
         for (var d of _data){
             d['data'].unshift({'score':'Tag','value':-1,'text':d['tag'],'link':d['link']})
         }

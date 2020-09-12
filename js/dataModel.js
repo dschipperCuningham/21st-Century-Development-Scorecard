@@ -35,7 +35,7 @@ class MatrixAndPrecedentsDataModel {
     }
 
     determineSuggestions(){
-        let numberOfSuggestions = 5
+        let numberOfSuggestions = 6
         let projectScores = this.projectScores
         let maximumScore = 0
         let lowestScoringAttributes = []

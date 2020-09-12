@@ -46,10 +46,10 @@ class suggestingOpportunities{
         let projectScores = _model.projectScores
         let container = this.container
         
-        console.log('current suggestions')
-        console.log(suggestions)
-        console.log('matrix data')
-        console.log(matrixData)
+        // console.log('current suggestions')
+        // console.log(suggestions)
+        // console.log('matrix data')
+        // console.log(matrixData)
         // console.log(container)
         container.style('display','table')
         let updateRow = container.selectAll('.suggestionRow').data(suggestions)

@@ -634,7 +634,7 @@ var dataIn = {
         "Abundance":{
             "name":"Abundance EcoVillage",
             "description":"",
-            "location":"United States",
+            "location":"US",
             "scores":{
                 "Limits to Growth":{"score":"Good","value":1,"category":"Place"},
                 "Food":{"score":"Better","value":2,"category":"Place"},

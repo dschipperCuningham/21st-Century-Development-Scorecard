@@ -64,6 +64,15 @@ function resizeSuggestions(){
     )
 }
 
+var radarChartId = 'radarChart'
+var radarChartContainer = document.getElementById(radarChartId)
+var rcWidth = radarChartContainer.clientWidth
+var rcHeight = radarChartContainer.clientHeight
+var radarChart = new RadarChart(dataModel,radarChartContainer,rcWidth,rcHeight)
+dataModel.addObserver(radarChart)
+radarChart.drawUpdate(dataModel)
+
+
 window.onresize = function(){
     resizeMatrix()
     resizeLineChart()
