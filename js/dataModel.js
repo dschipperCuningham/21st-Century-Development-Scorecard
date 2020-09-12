@@ -35,10 +35,11 @@ class MatrixAndPrecedentsDataModel {
     }
 
     determineSuggestions(){
+        let numberOfSuggestions = 5
         let projectScores = this.projectScores
         let maximumScore = 0
         let lowestScoringAttributes = []
-        while (maximumScore < 5 && lowestScoringAttributes.length < 5){
+        while (maximumScore < 5 && lowestScoringAttributes.length < numberOfSuggestions){
             let projectsIdentified = 0
             for (let d of this.matrixData){
                     let barrier = 100
@@ -47,10 +48,10 @@ class MatrixAndPrecedentsDataModel {
                             barrier = b['before']
                         }
                     }
-
+                    barrier -= 1
                     if (projectScores[d['tag']]['value'] == maximumScore && 
                                     maximumScore < barrier && 
-                                    lowestScoringAttributes.length < 5 &&
+                                    lowestScoringAttributes.length < numberOfSuggestions &&
                                     projectScores[d['tag']]['value'] < 4){
                         lowestScoringAttributes.push(projectScores[d['tag']])
                         projectsIdentified += 1

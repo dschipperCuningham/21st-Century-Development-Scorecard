@@ -123,7 +123,7 @@ div{
 }
 
 .suggestionRow{
-    
+    cursor: pointer;
 }
 .suggestionCell{
     padding-top: 10px;

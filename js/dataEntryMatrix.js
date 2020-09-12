@@ -17,27 +17,27 @@ class DataEntryMatrix{
         "///////ANY ONE TIME DATA SHAPING SHOULD HAPPEN HERE////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
-        console.log('matrix data')
-        console.log(_model.matrixData)
+        // console.log('matrix data')
+        // console.log(_model.matrixData)
 
         this.categoriesData = _model.categoryData
-        console.log('categories data')
-        console.log(this.categoriesData)
+        // console.log('categories data')
+        // console.log(this.categoriesData)
 
         this.projectScores = _model.projectScores
-        console.log('project scores')
-        console.log(this.projectScores)
+        // console.log('project scores')
+        // console.log(this.projectScores)
 
-        console.log('this project initial scores')
-        console.log(this.projectScores)
+        // console.log('this project initial scores')
+        // console.log(this.projectScores)
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////THE BUILD CHART DATA FUNCTION IS USED TO UPDATE THE CLASS WHEN THE DATA SOURCE CHANGES////////"
         //////////////////////////////////////////////////////////////////////////////////////
 
         this.structuredData = this.structureRowData(_model.matrixData);
-        console.log('data structured')
-        console.log(this.structuredData)
+        // console.log('data structured')
+        // console.log(this.structuredData)
 
         //////////////////////////////////////////////////////////////////////////////////////
         "///////BACK END CONTROLS FOR EDITING THE GRAPHIC////////"
@@ -320,7 +320,7 @@ class DataEntryMatrix{
             }
             
             // logging model for tracking purposes
-            console.log(_model)
+            // console.log(_model)
 
             row.selectAll('.matrixData').transition().duration(180)
                 .style('background',function(d){

@@ -43,7 +43,9 @@ class suggestingOpportunities{
     drawUpdate(_model){
         let suggestions = _model.suggestions
         let matrixData = _model.matrixData
+        let projectScores = _model.projectScores
         let container = this.container
+        
         console.log('current suggestions')
         console.log(suggestions)
         console.log('matrix data')
@@ -82,7 +84,7 @@ class suggestingOpportunities{
         })
         let enterCells = updateCells.enter().append('div').attr('class','suggestionCell')
         let exitCells = updateCells.exit().remove()
-        let mergeCells = enterCells.merge(updateCells).transition()
+        let mergeCells = enterCells.merge(updateCells)
             .text(function(d){
                 return d['key']
             })
@@ -109,6 +111,30 @@ class suggestingOpportunities{
                 }
             })
             
+        mergeRow.on('click',function(d){
+            // console.log(d)
+            // console.log(projectScores)
+            // console.log(matrixData)
+            let newData
+            // console.log(d['value'])
+            let newValue = d['value'] + 2
+            // console.log(newValue)
+            for (let i of matrixData){
+                if (i['tag'] == d['key']){
+                    newData = i['data'][newValue]
+                }
+            }
+            // console.log('new data')
+            // console.log(newData)
+            projectScores[d['key']]['value'] = newData['value']
+            projectScores[d['key']]['score'] = newData['score']
+            
+            _model.setProjectScores(projectScores)
+            _model.determineSuggestions()
+            _model.notifyObservers()
+        })
+
+        // mergeRow.transition().on('hover')
 
     }
 }

@@ -22,23 +22,23 @@ class LineChart{
         //////////////////////////////////////////////////////////////////////////////////////
 
         this.precedentProjects = _model.precedentData
-        console.log('precedent project data')
-        console.log(this.precedentProjects)
+        // console.log('precedent project data')
+        // console.log(this.precedentProjects)
 
         this.categoriesData = _model.categoryData
-        console.log('categories data')
-        console.log(this.categoriesData)
+        // console.log('categories data')
+        // console.log(this.categoriesData)
         
         this.matrixData = _model.matrixData
         
 
         this.projectName = _model.projectName
-        console.log('project name')
-        console.log(this.projectName)
+        // console.log('project name')
+        // console.log(this.projectName)
         
         this.structuredData = this.structureData(this.precedentProjects)
-        console.log('structured data')
-        console.log(this.structuredData)
+        // console.log('structured data')
+        // console.log(this.structuredData)
 
         this.svg = d3.select(this.container).append('svg')
             .attr('id','lineChartSvg')
@@ -65,8 +65,8 @@ class LineChart{
             }
         }
         this.yAxisData = yAxisData
-        console.log('matrix data')
-        console.log(_model.matrixData)
+        // console.log('matrix data')
+        // console.log(_model.matrixData)
 
         return
     }
@@ -156,7 +156,7 @@ class LineChart{
         ////////D3 COMPLETE GENERAL UPDATE PATTERN///////// 
         '///////LINES FOR CHART////////'
 
-        console.log('updated line chart')
+        // console.log('updated line chart')
         let updateLines = _linesGroup.selectAll('.chartLine').data(_data)
         let enterLines = updateLines.enter().append('path').attr('class','chartLine')
             .attr('fill-opacity',0)
