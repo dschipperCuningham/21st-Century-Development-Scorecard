@@ -195,7 +195,7 @@ class LineChart{
             })
             .style('fill-opacity',function(d){
                 if (d['name'] == _projectName){
-                    return 1
+                    return 0.8
                 } else {
                     return 0.1
                 }
