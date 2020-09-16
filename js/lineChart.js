@@ -51,7 +51,15 @@ class LineChart{
         this.xAxisText = this.svg.append('g').attr('id','lineChartXAxisText')
         this.yAxis = this.svg.append('g').attr('id','lineChartYAxis')
         this.yAxisText = this.svg.append('g').attr('id','lineChartYAxisText')
-        
+        this.notes = this.svg.append('g').attr('id','disclaimerNotes')
+
+        this.notes.selectAll('text').data([
+            'to the 21CD Matrix after the majority of precedent research had concluded',
+            'NOTE: Investment, Just Organizations and Beauty & Spirit have low values as they were added'
+        ]).enter().append('text').text(function(d){return d})
+        .attr('x',20).attr('y',function(d,i){
+            return i * -15 + _height - 20
+        })
         //////////////////////////////////////////////////////////////////////////////////////
         "///////GRAPHICS CONTROLS////////"
         //////////////////////////////////////////////////////////////////////////////////////
@@ -82,7 +90,7 @@ class LineChart{
 
     calculateDimensions(){
         this.yBorder = 40
-        this.yOffset = 100
+        this.yOffset = 180
         this.yMultiplier = (this.height - this.yBorder * 2 - this.yOffset) / 4
 
         this.xBorder = 20
@@ -111,7 +119,7 @@ class LineChart{
     }
 
     updateData(_model){
-        var updatedData = this.structureData(_model.precedentData)
+        let updatedData = this.structureData(_model.precedentData)
         this.structuredData = updatedData
         this.drawUpdate(_model)
     }
@@ -125,18 +133,18 @@ class LineChart{
         //////////////////////////////////////////////////////////////////////////////////////
 
         '///////LOCALIZING CLASS VARIABLES AND DOING SOME LIGHT DATA SHAPING////////'
-        var _thisClass = this
-        var _data = this.structuredData
-        var _projectName = this.projectName
-        var _precedentProjects = this.precedentProjects
-        var _categoriesData = this.categoriesData
-        var _matrixData = this.matrixData
-        var _yAxisData = this.yAxisData
+        let _thisClass = this
+        let _data = this.structuredData
+        let _projectName = this.projectName
+        let _precedentProjects = this.precedentProjects
+        let _categoriesData = this.categoriesData
+        let _matrixData = this.matrixData
+        let _yAxisData = this.yAxisData
 
-        var _height = this.height
-        var _width = this.width
-        var _centerX = this.centerX
-        var _centerY = this.centerY
+        let _height = this.height
+        let _width = this.width
+        let _centerX = this.centerX
+        let _centerY = this.centerY
 
         let yBorder = this.yBorder
         let yOffset = this.yOffset
@@ -146,20 +154,38 @@ class LineChart{
         let xOffset = this.xOffset
 
 
-        var _div = d3.select(this.container)
-        var _linesGroup = this.linesGroup
-        var _xAxis = this.xAxis
-        var _xAxisText = this.xAxisText
-        var _yAxis = this.yAxis
-        var _yAxisText = this.yAxisText
+        let _div = d3.select(this.container)
+        let _linesGroup = this.linesGroup
+        let _xAxis = this.xAxis
+        let _xAxisText = this.xAxisText
+        let _yAxis = this.yAxis
+        let _yAxisText = this.yAxisText
+
+        let dataLength = _data.length
+        let prIndex = dataLength
+        for (let i in _data){
+            let d = _data[i]
+            if (d['name'] == _projectName){
+                prIndex = i
+            }
+        }
+        _data.push(_data.splice(prIndex,1)[0])
 
         ////////D3 COMPLETE GENERAL UPDATE PATTERN///////// 
         '///////LINES FOR CHART////////'
 
         // console.log('updated line chart')
         let updateLines = _linesGroup.selectAll('.chartLine').data(_data)
-        let enterLines = updateLines.enter().append('path').attr('class','chartLine')
+        let enterLines = updateLines.enter().append('path').attr('class',function(d){
+                if (d['name'] != _projectName){
+                    return 'chartLine'
+                } else {
+                    return 'chartLine projectChartLine'
+                }
+                
+            })
             .attr('fill-opacity',0)
+        
         let exitLines = updateLines.exit()
         let mergeLines = enterLines.merge(updateLines).transition()
             // .style('stroke',function(d){
@@ -182,20 +208,22 @@ class LineChart{
                     coord.push(_height - ((scoreVal * yMult) + yOffset + yBorder))
                     coords.push(coord)
                 }
-                coords.push([
-                    _width -  xBorder,
-                    _height - (yBorder + yOffset)
-                ])
-                coords.push([
-                    xBorder + xOffset,
-                    _height - (yBorder + yOffset)
-                ])
+                if (d['name'] != _projectName){
+                    coords.push([
+                        _width -  xBorder,
+                        _height - (yBorder + yOffset)
+                    ])
+                    coords.push([
+                        xBorder + xOffset,
+                        _height - (yBorder + yOffset)
+                    ])
+                }
                 let _line = d3.line().curve(d3.curveMonotoneX)(coords)
                 return _line
             })
             .style('fill-opacity',function(d){
                 if (d['name'] == _projectName){
-                    return 0.8
+                    return 0
                 } else {
                     return 0.1
                 }
@@ -208,6 +236,20 @@ class LineChart{
                 } else {
                     // console.log(d)
                     return 'lightgray'
+                }
+            })
+            .style('stroke-width',function(d){
+                if (d['name'] == _projectName){
+                    return '6px'
+                } else {
+                    return 0
+                }
+            })
+            .style('stroke',function(d){
+                if (d['name'] == _projectName){
+                    return '#fbec40'
+                } else {
+                    return 'none'
                 }
             })
         
@@ -264,7 +306,7 @@ class LineChart{
                 if (d['name'] == _projectName){
                     return '#fbec40'
                 }else{
-                    return 'black'
+                    return 'none'
                 }
             })
         

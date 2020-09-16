@@ -9,9 +9,39 @@ div{
     text-align: center;
 }
 
+#header{
+    position: fixed;
+    /* top: 0%; */
+    /* display: block; */
+    top: 0;
+    height:80px;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 2px 10px #aaa;
+    
+}
+#logo{
+    width: 100%;
+    height: 100%;
+    background: url(/Assets/21cd-logo-2x.png) no-repeat 28px center;
+    background-size: auto 70px;
+    
+}
+#interactiveBody{
+    z-index: 1;
+    /* padding-top: 100px; */
+}
 .flex-container{
     display: flex;
     flex-wrap: wrap;
+
+    position: absolute;
+    top: 80px;
+    /* position: absolute; */
+    /* height: 90%;
+    top: 10%;
+    width: 100%; */
 }
 
 /* .flex-container > div {
@@ -21,29 +51,26 @@ div{
 } */
 
 #matrixCanvas {
-    width: 55%;
     height:100%;
     margin:0px;
     padding:0px;
-    max-width: 55%;
-    min-width: 720px;
 }
 
 #dataVizCanvas{
-    width: 45%;
-    min-width: 600px;
+    position: sticky;
+    top: 80px;
 }
 #lineChart{
     width: 100%;
     height: 450px;
     position: sticky;
-    top: 0;
+    top: 80px;
 }
 
 
 .matrixHeader{
     position: sticky;
-    top: 0;
+    top: 80px;
 }
 
 .headerCell{
@@ -110,11 +137,14 @@ div{
 h2{
     margin-block-start:0%;
 }
-#opportunitiesAndRadar{
+#dataVizCanvas{
+    position: sticky;
+}
+/* #opportunitiesAndRadar{
     padding: 1%;
     width: 97%;
-    height: 800;
-    top: 500px;
+    height: 800px;
+    top: 505px;
     position: sticky;
     display: table;
     margin: 0;
@@ -126,12 +156,14 @@ h2{
     top: 0%;
     padding-top: 0%;
     vertical-align: top;
-}
+    height: 800px;
+} */
 #radarChart{
-    display: table-cell;
-    width: 40%;
-    height: 100%;
-    top: 0%;
+    /* display: absolute; */
+    position: sticky;
+    width: 100%;
+    height: 520px;
+    top: 530px;
     margin: 0;
     vertical-align: top;
 }
@@ -152,4 +184,8 @@ h2{
 .radarChartAxes{
     stroke-width: 1px;
     stroke: gray;
+}
+.radarChartLabels{
+    font-weight: 600;
+    font-size: medium;
 }

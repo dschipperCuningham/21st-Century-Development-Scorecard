@@ -140,7 +140,7 @@ class DataEntryMatrix{
         var mainHeaderHeight = this.mainHeaderHeight
         var mainHeaderTopBottomPadding = this.mainHeaderTopBottomPadding
         var categoryHeaderHeight = this.categoryHeaderHeight
-        var cellWidth = (_width-1)/6
+        var cellWidth = (_width)/6
         var matrixCellPadding = this.matrixCellPadding
 
 
@@ -181,7 +181,7 @@ class DataEntryMatrix{
             })
             .style('display','table-cell')
             .style('width',function(d,i){
-                    return cellWidth-1 + 'px'
+                    return cellWidth + 'px'
             })
             .style('padding-top',function(){
                 return mainHeaderTopBottomPadding + 'px'
@@ -259,7 +259,7 @@ class DataEntryMatrix{
                 return d['text']
             })
             .style('display','table-cell')
-            .style('width',(cellWidth - 2) - (matrixCellPadding*2) + 'px')
+            .style('width',(cellWidth) - (matrixCellPadding*2) + 'px')
             .style('padding-left',matrixCellPadding+'px')
             .style('padding-right',matrixCellPadding+'px')
             .style('padding-top',matrixCellPadding + 'px')

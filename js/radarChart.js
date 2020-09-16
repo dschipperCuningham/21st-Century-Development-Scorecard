@@ -13,7 +13,7 @@ class RadarChart{
         this.width = _width;
         this.height = _height;
         this.centerX = _width/2;
-        this.centerY = _height/2;
+        this.centerY = this.height/2;
         this.container = _div;
         let categoryData = _model.categoryData
         let precedentData = _model.precedentData
@@ -23,7 +23,7 @@ class RadarChart{
         console.log(precedentData)
     
         this.labelPadding = 10
-        this.axisLength = 80
+        this.axisLength = 180
         this.minLength = 10
         this.axisScale = d3.scaleLinear().domain([0,4]).range([this.minLength,this.axisLength])
 
@@ -88,9 +88,9 @@ class RadarChart{
         //////////////////////////////////////////////////////////////////////////////////////
 
         let catCount = catAverages.length
-        console.log(catCount)
+        // console.log(catCount)
         let axisAngle = (Math.PI*2)/catCount
-        console.log(axisAngle)
+        // console.log(axisAngle)
         for (let i in catAverages){
             let c = catAverages[i]
             let rotation = i * axisAngle + Math.PI * 0.5
@@ -102,7 +102,7 @@ class RadarChart{
         this.categoryAverages = catAverages
 
         this.svgCanvas = d3.select(_div).append('svg').attr('class','radarSvgCanvas')
-            .style('height',_height)
+            .style('height',this.height)
             .style('width',_width)
 
         
@@ -123,8 +123,8 @@ class RadarChart{
         this.width = _width;
         this.height = _height;
         this.centerX = _width/2;
-        this.centerY = _height/2;
-
+        this.centerY = this.height/2;
+        this.svgCanvas.style('height',this.height).style('width',_width)
         this.drawUpdate(_model);
         return
     }
@@ -199,7 +199,7 @@ class RadarChart{
         let updateAxes = axisGroup.selectAll('line').data(categoryAverages)
         let enterAxes = updateAxes.enter().append('line').attr('class','radarChartAxes')
         let exitAxes = updateAxes.exit()
-        let mergeAxes = enterAxes.merge(updateAxes)
+        let mergeAxes = enterAxes.merge(updateAxes).transition()
             .attr('x1',function(d){
                 return centerX + (d['unitX'] * minLength)
             })
@@ -212,18 +212,14 @@ class RadarChart{
             .attr('y2',function(d){
                 return centerY + (d['unitY'] * axisLength)
             })
-        let updateWhiteCircle = whiteCircleGroup.selectAll('circle').data([{
-            'cx': centerX,
-            'cy': centerY,
-            'r': minLength
-        }])
+        
 
         let updateLabels = labelGroup.selectAll('text').data(categoryAverages)
         let enterLabels = updateLabels.enter().append('text').attr('class','radarChartLabels')
         let exitLabels = updateLabels.exit()
-        let mergeLabels = enterLabels.merge(updateLabels)
+        let mergeLabels = enterLabels.merge(updateLabels).transition()
             .text(function(d){
-                console.log(d)
+                // console.log(d)
                 return d['category']
             })
             .attr('x',function(d){
@@ -242,9 +238,14 @@ class RadarChart{
                 }
             })
 
+        let updateWhiteCircle = whiteCircleGroup.selectAll('circle').data([{
+            'cx': centerX,
+            'cy': centerY,
+            'r': minLength
+        }])
         let enterWhiteCircle = updateWhiteCircle.enter().append('circle').attr('class','whiteCircle')
         let exitWhiteCircle = updateWhiteCircle.exit()
-        let mergeWhiteCircle = enterWhiteCircle.merge(updateWhiteCircle)
+        let mergeWhiteCircle = enterWhiteCircle.merge(updateWhiteCircle).transition()
             .attr('cx',function(d){return d['cx']})
             .attr('cy',function(d){return d['cy']})
             .attr('r',function(d){return d['r']})

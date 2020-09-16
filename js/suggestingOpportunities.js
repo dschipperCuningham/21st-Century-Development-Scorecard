@@ -52,6 +52,7 @@ class suggestingOpportunities{
         // console.log(matrixData)
         // console.log(container)
         container.style('display','table')
+        container.style('height',800)
         let updateRow = container.selectAll('.suggestionRow').data(suggestions)
         let enterRow = updateRow.enter().append('div').attr('class','suggestionRow')
         let exitRow = updateRow.exit().remove()
